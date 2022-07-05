@@ -6,11 +6,13 @@ import Greeting from './Greeting'
 class App extends React.Component {
   render () {
     return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Greeting greeting="Hullo Chum"/>} />
-        </Routes>
-      </BrowserRouter>  
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Greeting greeting="Hullo Chum"/>} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
