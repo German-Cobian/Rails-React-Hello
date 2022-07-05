@@ -6,6 +6,9 @@ ruby "3.1.1"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
 
+gem 'react-rails'
+gem 'webpacker'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -26,6 +29,9 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
+# Linter for Ruby
+gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
