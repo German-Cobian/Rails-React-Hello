@@ -76,3 +76,8 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 42ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4146)
 
 
+Started GET "/api/greetings" for ::1 at 2022-07-05 13:47:50 -0700
+Processing by Api::GreetingsController#index as JSON
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1567)
+
+
