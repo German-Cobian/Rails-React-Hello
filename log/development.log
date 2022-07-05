@@ -832,3 +832,200 @@ Migrating to CreateGreetings (20220705223745)
   [1m[36mTRANSACTION (40.8ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2104194433115457480)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (38.5ms)[0m  [1m[32mINSERT INTO "greetings" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["text", "Welcome back my friends to the show that never ends"], ["created_at", "2022-07-05 22:49:41.784709"], ["updated_at", "2022-07-05 22:49:41.784709"]]
+  [1m[36mTRANSACTION (93.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.3ms)[0m  [1m[32mINSERT INTO "greetings" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["text", "Welcome, come in and sit a spell"], ["created_at", "2022-07-05 22:49:41.921263"], ["updated_at", "2022-07-05 22:49:41.921263"]]
+  [1m[36mTRANSACTION (40.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.3ms)[0m  [1m[32mINSERT INTO "greetings" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["text", "Welcome to the jungle"], ["created_at", "2022-07-05 22:49:41.965149"], ["updated_at", "2022-07-05 22:49:41.965149"]]
+  [1m[36mTRANSACTION (41.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.3ms)[0m  [1m[32mINSERT INTO "greetings" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["text", "Welcome, watch out for the dog do-do as you come in"], ["created_at", "2022-07-05 22:49:42.009203"], ["updated_at", "2022-07-05 22:49:42.009203"]]
+  [1m[36mTRANSACTION (40.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (0.5ms)[0m  [1m[32mINSERT INTO "greetings" ("text", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["text", "Welcome, this app is your friend"], ["created_at", "2022-07-05 22:49:42.053318"], ["updated_at", "2022-07-05 22:49:42.053318"]]
+  [1m[36mTRANSACTION (41.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2022-07-05 15:51:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 114.6ms | Allocations: 1686)
+  Rendered layout layouts/application.html.erb (Duration: 1677.2ms | Allocations: 51575)
+Completed 200 OK in 1691ms (Views: 1681.5ms | ActiveRecord: 0.0ms | Allocations: 54914)
+
+
+Started GET "/api/greetings" for ::1 at 2022-07-05 15:52:24 -0700
+Processing by Api::GreetingsController#index as JSON
+  [1m[36mGreeting Load (95.7ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY random() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
+Completed 200 OK in 179ms (Views: 0.7ms | ActiveRecord: 113.1ms | Allocations: 5631)
+
+
+Started GET "/api/greetings" for ::1 at 2022-07-05 15:52:30 -0700
+Processing by Api::GreetingsController#index as JSON
+  [1m[36mGreeting Load (0.4ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY random() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 911)
+
+
+Started GET "/api/greetings" for ::1 at 2022-07-05 15:52:34 -0700
+Processing by Api::GreetingsController#index as JSON
+  [1m[36mGreeting Load (0.4ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY random() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 821)
+
+
+Started GET "/api/greetings" for ::1 at 2022-07-05 15:52:39 -0700
+Processing by Api::GreetingsController#index as JSON
+  [1m[36mGreeting Load (1.6ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY random() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 818)
+
+
+Started GET "/" for ::1 at 2022-07-05 15:52:54 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 49.4ms | Allocations: 1144)
+  Rendered layout layouts/application.html.erb (Duration: 202.4ms | Allocations: 3714)
+Completed 200 OK in 205ms (Views: 203.5ms | ActiveRecord: 0.0ms | Allocations: 4033)
+
+
+Started GET "/" for ::1 at 2022-07-05 15:55:27 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 797.4ms | Allocations: 16605)
+Completed 200 OK in 800ms (Views: 799.2ms | ActiveRecord: 0.0ms | Allocations: 17283)
+
+
+Started GET "/" for ::1 at 2022-07-05 15:55:43 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 16531)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 17206)
+
+
+Started GET "/" for ::1 at 2022-07-05 15:55:52 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 16463)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 17138)
+
+
+Started GET "/" for ::1 at 2022-07-05 15:55:55 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 16443)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 17118)
+
+
+Started GET "/" for ::1 at 2022-07-05 15:55:57 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 16550)
+Completed 200 OK in 98ms (Views: 30.7ms | ActiveRecord: 0.0ms | Allocations: 17224)
+
+
+Started GET "/" for ::1 at 2022-07-05 15:56:00 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 156.8ms | Allocations: 16563)
+Completed 200 OK in 159ms (Views: 158.0ms | ActiveRecord: 0.0ms | Allocations: 17238)
+
+
+Started GET "/" for ::1 at 2022-07-05 15:56:04 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 48.2ms | Allocations: 16514)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.0ms | Allocations: 17188)
+
+
+Started GET "/" for ::1 at 2022-07-05 15:56:07 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 16452)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.0ms | Allocations: 17126)
+
+
+Started GET "/" for ::1 at 2022-07-05 15:56:18 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 58.4ms | Allocations: 16518)
+Completed 200 OK in 61ms (Views: 59.9ms | ActiveRecord: 0.0ms | Allocations: 17192)
+
+
+Started GET "/" for ::1 at 2022-07-05 15:56:26 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 111.4ms | Allocations: 16551)
+Completed 200 OK in 116ms (Views: 113.7ms | ActiveRecord: 0.0ms | Allocations: 17225)
+
+
+Started GET "/" for ::1 at 2022-07-05 16:05:37 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 71.7ms | Allocations: 1686)
+  Rendered layout layouts/application.html.erb (Duration: 691.7ms | Allocations: 49797)
+Completed 200 OK in 709ms (Views: 697.3ms | ActiveRecord: 0.0ms | Allocations: 53136)
+
+
+Started GET "/" for ::1 at 2022-07-05 16:06:36 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 1148)
+  Rendered layout layouts/application.html.erb (Duration: 39.9ms | Allocations: 3718)
+Completed 200 OK in 41ms (Views: 40.6ms | ActiveRecord: 0.0ms | Allocations: 4077)
+
+
+Started GET "/" for ::1 at 2022-07-05 16:07:13 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 21.9ms | Allocations: 1090)
+  Rendered layout layouts/application.html.erb (Duration: 73.9ms | Allocations: 3506)
+Completed 200 OK in 75ms (Views: 74.7ms | ActiveRecord: 0.0ms | Allocations: 3801)
+
+
+Started GET "/" for ::1 at 2022-07-05 16:07:34 -0700
+Processing by StaticController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html.erb within layouts/application
+  Rendered static/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1151)
+  Rendered layout layouts/application.html.erb (Duration: 303.4ms | Allocations: 16478)
+Completed 200 OK in 308ms (Views: 306.8ms | ActiveRecord: 0.0ms | Allocations: 17155)
+
+
+Started GET "/api/greetings" for ::1 at 2022-07-05 16:07:46 -0700
+Processing by Api::GreetingsController#index as JSON
+  [1m[36mGreeting Load (1.3ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" ORDER BY random() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
+Completed 200 OK in 388ms (Views: 0.5ms | ActiveRecord: 7.1ms | Allocations: 5611)
+
+
