@@ -4,13 +4,13 @@ class Greeting extends React.Component {
   render () {
     return (
       <React.Fragment>
-        Text: {this.props.text}
+        Greeting: {this.props.greeting}
       </React.Fragment>
     );
   }
 }
 
 Greeting.propTypes = {
-  text: PropTypes.string
+  greeting: PropTypes.string
 };
 export default Greeting
